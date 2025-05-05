@@ -5,22 +5,28 @@ import Layout from './components/layout';
 import { ThemeProvider } from './context/theme-provider';
 import WeatherDashboard from './pages/weather-dashboard';
 import CityPage from './pages/city-page';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+/* From tanstack for state management */
+const queryClient = new QueryClient();
 
 function App() {
 
   return (
-    <BrowserRouter>
-      <ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <ThemeProvider>
 
-        <Layout>
-          <Routes>
-            <Route path="/" element={<WeatherDashboard />} />
-            <Route path="/city/:cityName" element={<CityPage />} />
-          </Routes>
-        </Layout>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<WeatherDashboard />} />
+              <Route path="/city/:cityName" element={<CityPage />} />
+            </Routes>
+          </Layout>
 
-      </ThemeProvider>
-    </BrowserRouter>
+        </ThemeProvider>
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 
