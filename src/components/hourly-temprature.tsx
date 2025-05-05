@@ -1,6 +1,5 @@
-import type { ForecastData } from '@/api/types'
-import React from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
+import type { ForecastData } from '@/api/types';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { format } from 'date-fns';
 
