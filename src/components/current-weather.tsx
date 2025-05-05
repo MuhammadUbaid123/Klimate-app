@@ -12,7 +12,7 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
 
     const {
         weather: [currentWeather],
-        main: { temp, feels_like, temp_min, temp_max, pressure, humidity },
+        main: { temp, feels_like, temp_min, temp_max, humidity },
         wind: { speed },
     } = data;
 
